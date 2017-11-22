@@ -19,8 +19,7 @@
     "demands": [
         "node.js"
     ],
-    "minimumAgentVersion": "1.91.0"
-    ,
+    "minimumAgentVersion": "1.91.0",
     "instanceNameFormat": "AccessibilityChecker $(targets)",
     "inputs": [
         {
@@ -39,9 +38,7 @@
             "defaultValue": "",
             "required": false,
             "helpMarkDown": "List of comma separated urls to test."
-        },
-        
-        
+        },     
         {
             "name": "tags",
             "type": "string",
@@ -50,7 +47,6 @@
             "helpMarkDown": "Tags used to filter the tasks, separated by comma.",
             "required": false
         },
-
         {
             "name": "loginurl",
             "type": "string",
@@ -59,9 +55,7 @@
             "helpMarkDown": "URL used to provide user and pass before running the validation, leave in blank if no login is required",
             "required": false
         },
-
-
-                {
+        {
             "name": "userControlName",
             "type": "string",
             "label": "UserName Control xPath",
@@ -69,7 +63,6 @@
             "helpMarkDown": "xPath of the Control used to type the username",
             "required": false
         },
-
         {
             "name": "passControlName",
             "type": "string",
@@ -78,11 +71,7 @@
             "helpMarkDown": "xPath of the Control used to type password",
             "required": false
         },
-
-
-
-
-                {
+        {
             "name": "user",
             "type": "string",
             "label": "User Name",
@@ -99,7 +88,6 @@
             "helpMarkDown": "Value of the Password typed in the login page of the app",
             "required": false
         },
-
         {
             "name": "loginButtonName",
             "type": "string",
@@ -108,8 +96,6 @@
             "helpMarkDown": "xPath used to locate the button used to click and perform the login",
             "required": false
         },
-
-
         {
             "name": "titleToWait",
             "type": "string",
@@ -118,11 +104,6 @@
             "helpMarkDown": "Title of the landing page after login",
             "required": false
         }
-
-
-
-          
-        
     ],
     "execution": {
         "Node": {

@@ -19,24 +19,24 @@ AxeTaskRunner.prototype.getGruntInstance = function () {
     gt = this.vstsTask.which('grunt', false);
 
     if (this.vstsTask.exist(gt)) {
-        gruntInstance = this.vstsTask.createToolRunner(gt);
+        gruntInstance = this.vstsTask.tool(gt);
     } else {
         var gtcli = null;
 
-        gruntInstance = this.vstsTask.createToolRunner(this.vstsTask.which('node', true));
+        gruntInstance = this.vstsTask.tool(this.vstsTask.which('node', true));
 
         gtcli = this.vstsTask.getInput('gruntCli', true);
         gtcli = path.resolve(cwd, gtcli);
 
         if (this.vstsTask.exist(gtcli)) {
-            gruntInstance.pathArg(gtcli);
+            gruntInstance.line(gtcli);
         } else {
             this.vstsTask.setResult(this.vstsTask.TaskResult.Failed, this.vstsTask.loc('GruntCliNotInstalled', gtcli));
         }
     }
 
-    gruntInstance.arg('--gruntfile');
-    gruntInstance.pathArg(gruntFile);
+    gruntInstance.arg("--gruntfile");
+    gruntInstance.line(gruntFile)
 
     return gruntInstance;
 }
@@ -69,55 +69,55 @@ AxeTaskRunner.prototype.parseReportFromFile = function (reportFile) {
 
 AxeTaskRunner.prototype.setGruntArgs = function (gt, analysisConfig) {
     'use strict';
-
+    
     if (analysisConfig.urls) {
         gt.arg("--urls");
-        gt.pathArg(analysisConfig.urls);
+        gt.line(analysisConfig.urls);
     }
 
-    if (analysisConfig.urlfile) {
+    if (analysisConfig.urlfile && fs.lstatSync(analysisConfig.urlfile).isFile()) {
         gt.arg("--urlfile");
-        gt.pathArg(analysisConfig.urlfile);
+        gt.line(analysisConfig.urlfile);
     }
 
     if (analysisConfig.tags) {
         gt.arg("--tags");
-        gt.pathArg(analysisConfig.tags);
+        gt.line(analysisConfig.tags);
     }
 
     if (analysisConfig.loginurl) {
         gt.arg("--loginurl");
-        gt.pathArg(analysisConfig.loginurl);
+        gt.line(analysisConfig.loginurl);
     }
 
     if (analysisConfig.userControlName) {
         gt.arg("--userControlName");
-        gt.pathArg(analysisConfig.userControlName);
+        gt.line(analysisConfig.userControlName);
     }
 
     if (analysisConfig.passControlName) {
         gt.arg("--passControlName");
-        gt.pathArg(analysisConfig.passControlName);
+        gt.line(analysisConfig.passControlName);
     }
 
     if (analysisConfig.user) {
         gt.arg("--user");
-        gt.pathArg(analysisConfig.user);
+        gt.line(analysisConfig.user);
     }
 
     if (analysisConfig.pass) {
         gt.arg("--pass");
-        gt.pathArg(analysisConfig.pass);
+        gt.line(analysisConfig.pass);
     }
 
     if (analysisConfig.titleToWait) {
         gt.arg("--titleToWait");
-        gt.pathArg(analysisConfig.titleToWait);
+        gt.line(analysisConfig.titleToWait);
     }
 
     if (analysisConfig.loginButtonName) {
         gt.arg("--loginButtonName");
-        gt.pathArg(analysisConfig.loginButtonName);
+        gt.line(analysisConfig.loginButtonName);
     }
     
     gt.arg("--force");

@@ -24,6 +24,6 @@ module.exports = function (grunt) {
     },
   });
 
-  grunt.loadNpmTasks('grunt-axe-webdriver-private');
+  grunt.loadNpmTasks('grunt-axe-webdriver-customscripts');
   grunt.registerTask('default', ['axe-webdriver']);
 };

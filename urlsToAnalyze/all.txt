@@ -1,1 +1,2 @@
-http://www.google.com;urlsToAnalyze\prescript.txt
+https://www.w3.org/WAI/intro/wcag;urlsToAnalyze\prescript.txt
+http://www.google.com/
