@@ -1,8 +1,8 @@
 {
     "manifestVersion": 1,
     "id": "webaccessibility-task",
-    "name": "Accessibility Checker",
-    "version": "0.0.1",
+    "name": "Accessibility Checker Teste",
+    "version": "0.0.3",
     "publisher": "gussan",
     "targets": [
         {
@@ -13,27 +13,20 @@
     "categories": [
         "Build and release"
     ],
-    "//uncomment 'icons' below to include a custom icon": "",
-    "//icons": {
-        "default": "images/extension-icon.png"
-    },
     "files": [
         {
-            "//Relative path of the task directory": "",
-            "path": ""
+            "path": "Tasks/AccessibilityChecker"
         }
     ],
     "contributions": [
         {
-            "//Identifier of the contribution. Must be unique within the extension. Does not need to match the name of the build task, but typically the build task name is included in the ID of the contribution.": "",
-            "id": "webaccessibility-task",
+            "id": "AccessibilityChecker",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "//Name of the task. This must match the folder name of the corresponding self-contained build task definition.": "",
-                "name": "webaccessibilitytask"
+                "name": "Tasks/AccessibilityChecker"
             }
         }
     ]

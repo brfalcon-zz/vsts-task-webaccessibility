@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="http://localhost:1811/Home/WithoutViolations" timestamp="1512073720061" time="495" tests="18" failures="0" errors="0" skipped="0">
+    <testcase classname="http://localhost:1811/Home/WithoutViolations" name="html > body"/>
+    <testcase classname="http://localhost:1811/Home/WithoutViolations" name=".navbar-header > button.navbar-toggle"/>
+    <testcase classname="http://localhost:1811/Home/WithoutViolations" name="html"/>
+    <testcase classname="http://localhost:1811/Home/WithoutViolations" name=".navbar-header > a.navbar-brand"/>
+    <testcase classname="http://localhost:1811/Home/WithoutViolations" name=".container.body-content > h1"/>
+    <testcase classname="http://localhost:1811/Home/WithoutViolations" name=".container.body-content > p"/>
+    <testcase classname="http://localhost:1811/Home/WithoutViolations" name="footer > p"/>
+    <testcase classname="http://localhost:1811/Home/WithoutViolations" name="html"/>
+    <testcase classname="http://localhost:1811/Home/WithoutViolations" name=".container.body-content > h1"/>
+    <testcase classname="http://localhost:1811/Home/WithoutViolations" name="html"/>
+    <testcase classname="http://localhost:1811/Home/WithoutViolations" name="html"/>
+    <testcase classname="http://localhost:1811/Home/WithoutViolations" name=".navbar-header > button.navbar-toggle"/>
+    <testcase classname="http://localhost:1811/Home/WithoutViolations" name=".navbar-header > a.navbar-brand"/>
+    <testcase classname="http://localhost:1811/Home/WithoutViolations" name=".container.body-content > p"/>
+    <testcase classname="http://localhost:1811/Home/WithoutViolations" name="footer > p"/>
+    <testcase classname="http://localhost:1811/Home/WithoutViolations" name=".navbar-header > a.navbar-brand"/>
+    <testcase classname="http://localhost:1811/Home/WithoutViolations" name="head > meta[name=&quot;viewport&quot;]"/>
+    <testcase classname="http://localhost:1811/Home/WithoutViolations" name="head > meta[name=&quot;viewport&quot;]"/>
+  </testsuite>
+  <testsuite name="http://localhost:1811/Home/PreScript" timestamp="1512073730725" time="441" tests="25" failures="1" errors="0" skipped="0">
+    <testcase classname="http://localhost:1811/Home/PreScript" name="#img">
+      <failure message="Images must have alternate text (https://dequeuniversity.com/rules/axe/2.5/image-alt?application=webdriverjs)&#xA;">
+        <![CDATA[Target: #img
+
+HTML: <img id="img" src="/images/error.jpg">
+
+Summary:
+Fix any of the following:
+    • Element does not have an alt attribute
+    • aria-label attribute does not exist or is empty
+    • aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible
+    • Element has no title attribute or the title attribute is empty
+    • Element's default semantics were not overridden with role="presentation"
+    • Element's default semantics were not overridden with role="none"
+]]>
+      </failure>
+    </testcase>
+    <testcase classname="http://localhost:1811/Home/PreScript" name="html > body"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name=".navbar-header > button.navbar-toggle"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name="html"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name=".navbar-header > a.navbar-brand"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name=".container.body-content > h1"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name=".container.body-content > p:nth-child(2)"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name=".container.body-content > a"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name="footer > p"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name="html"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name="#error"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name="#img"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name=".container.body-content > h1"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name="html"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name="html"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name=".navbar-header > button.navbar-toggle"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name=".navbar-header > a.navbar-brand"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name=".container.body-content > p:nth-child(2)"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name=".container.body-content > a"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name="#error"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name="footer > p"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name=".navbar-header > a.navbar-brand"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name=".container.body-content > a"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name="head > meta[name=&quot;viewport&quot;]"/>
+    <testcase classname="http://localhost:1811/Home/PreScript" name="head > meta[name=&quot;viewport&quot;]"/>
+  </testsuite>
+  <testsuite name="http://localhost:1811/Home/WithViolations" timestamp="1512073734222" time="460" tests="20" failures="1" errors="0" skipped="0">
+    <testcase classname="http://localhost:1811/Home/WithViolations" name="p:nth-child(3) > img[src$=&quot;error.jpg&quot;]">
+      <failure message="Images must have alternate text (https://dequeuniversity.com/rules/axe/2.5/image-alt?application=webdriverjs)&#xA;">
+        <![CDATA[Target: p:nth-child(3) > img[src$="error.jpg"]
+
+HTML: <img src="/images/error.jpg">
+
+Summary:
+Fix any of the following:
+    • Element does not have an alt attribute
+    • aria-label attribute does not exist or is empty
+    • aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible
+    • Element has no title attribute or the title attribute is empty
+    • Element's default semantics were not overridden with role="presentation"
+    • Element's default semantics were not overridden with role="none"
+]]>
+      </failure>
+    </testcase>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name="html > body"/>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name=".navbar-header > button.navbar-toggle"/>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name="html"/>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name=".navbar-header > a.navbar-brand"/>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name=".container.body-content > h1"/>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name=".container.body-content > p:nth-child(2)"/>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name="footer > p"/>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name="html"/>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name=".container.body-content > h1"/>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name="html"/>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name="html"/>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name=".navbar-header > button.navbar-toggle"/>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name=".navbar-header > a.navbar-brand"/>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name=".container.body-content > p:nth-child(2)"/>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name=".container.body-content > p:nth-child(3)"/>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name="footer > p"/>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name=".navbar-header > a.navbar-brand"/>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name="head > meta[name=&quot;viewport&quot;]"/>
+    <testcase classname="http://localhost:1811/Home/WithViolations" name="head > meta[name=&quot;viewport&quot;]"/>
+  </testsuite>
+</testsuites>

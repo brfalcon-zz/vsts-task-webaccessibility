@@ -1,0 +1,14 @@
+[
+    {
+        "url": "http://localhost:1811/Home/WithoutViolations"
+    },
+    {
+        "url": "http://localhost:1811/Home/PreScript",
+        "preScriptFile": "prescript.txt",
+        "elementToWait": "//img[@id='img']",
+        "timeout": 1000
+    },
+    {
+        "url": "http://localhost:1811/Home/WithViolations"
+    }
+]
