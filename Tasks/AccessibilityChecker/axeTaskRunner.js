@@ -53,8 +53,9 @@ AxeTaskRunner.prototype.parseConfiguration = function () {
             continueOnViolations: this.vstsTask.getBoolInput('continueOnViolations', false) || false,
             loginButtonName: this.vstsTask.getInput('loginButtonName', false) || "",
             urls: this.vstsTask.getInput('urls', false) || '',
-            urlfile: this.vstsTask.getInput('urlfile', false) || path.resolve('urlsToAnalyze/all.txt'),
+            urlfile: this.vstsTask.getInput('urlfile', false),
             tags: this.vstsTask.getInput('tags', false) || '',
+            baseUrl: this.vstsTask.getInput('baseUrl', false) || '',
             testResultPath: this.vstsTask.getInput("testOutputFolder")
         }
     };
@@ -125,6 +126,11 @@ AxeTaskRunner.prototype.setGruntArgs = function (gt, analysisConfig) {
     if (analysisConfig.testResultPath) {
         gt.arg("--testResultPath");
         gt.line(analysisConfig.testResultPath);
+    }
+
+    if (analysisConfig.testResultPath) {
+        gt.arg("--baseUrl");
+        gt.line(analysisConfig.baseUrl);
     }
 
     if (analysisConfig.continueOnViolations)

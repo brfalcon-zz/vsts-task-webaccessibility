@@ -29,6 +29,7 @@ GruntConfiguration.prototype.getConfig = function () {
     config.titleToWait = this.gruntObj.option('titleToWait');
     config.loginButtonName = this.gruntObj.option('loginButtonName');
     config.testResultPath = this.gruntObj.option('testResultPath');
+    config.baseUrl = this.gruntObj.option('baseUrl');
 
     options.browser = "phantomjs";
 
@@ -51,6 +52,9 @@ GruntConfiguration.prototype.getConfig = function () {
             if (current.preScriptFile && current.preScriptFile != "")
                 current.preScriptFile = filePath + current.preScriptFile;
             
+            if (config.baseUrl && current.baseUrl != "" && current.url.indexOf('http') > 0)
+                current.url = config.baseUrl + current.url; 
+
             urls.push(current);
         }
     }
@@ -65,6 +69,10 @@ GruntConfiguration.prototype.getConfig = function () {
         for (var i = 0; i < arrUrls.length; i++)
         {
             var url = arrUrls[i].trim();
+            
+            if (config.baseUrl && config.baseUrl != "" && url.indexOf("http") != 0)
+                url = config.baseUrl + url; 
+
             urls.push({
                 url: url
             });

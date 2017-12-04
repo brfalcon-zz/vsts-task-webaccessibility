@@ -1,14 +1,17 @@
 {
     "manifestVersion": 1,
     "id": "webaccessibility-task",
-    "name": "Accessibility Checker Teste",
-    "version": "0.0.3",
+    "name": "Accessibility Checker",
+    "version": "0.0.9",
     "publisher": "gussan",
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
         }
-    ],    
+    ], 
+    "icons": {
+        "default": "images/icon.png"
+    },   
     "description": "Check the compliance of web pages for patters os accessibility using aXe rules.",
     "categories": [
         "Build and release"

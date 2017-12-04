@@ -1,6 +1,6 @@
 {
     "id": "521D1E15-FAAA-4B73-A93B-B2FE88A9A286",
-    "name": "AccessibilityChecker",
+    "name": "Accessibility Checker",
     "friendlyName": "Accessibility Checker",
     "description": "Check the compliance of web pages for patters os accessibility using aXe rules",
     "helpMarkDown": "[More Information](http://aka.ms/AccessibilityCheckerTask)",
@@ -14,36 +14,69 @@
     "version": {
         "Major": 0,
         "Minor": 0,
-        "Patch": 2
+        "Patch": 9
     },
     "demands": [
         "node.js"
     ],
     "minimumAgentVersion": "1.91.0",
     "instanceNameFormat": "AccessibilityChecker $(targets)",
+    "groups": [
+        {
+            "name": "basicConfiguration",
+            "displayName": "Basic Configuration",
+            "isExpanded": true
+        },
+        {
+            "name": "loginConfiguration",
+            "displayName": "Website Login",
+            "isExpanded": false
+        }
+    ],
     "inputs": [
         {
             "name": "urlfile",
             "type": "filePath",
             "label": "Urls File",
             "defaultValue": "",
+            "groupName": "basicConfiguration",
             "required": false,
             "helpMarkDown": "Path to file with url to be tested. IF provided URL To Test will be ignored"
-
         },
         {
             "name": "urls",
             "type": "string",
             "label": "Urls To Test",
             "defaultValue": "",
+            "groupName": "basicConfiguration",
+            "visibleRule": "urlfile = \"\"",
             "required": false,
             "helpMarkDown": "List of comma separated urls to test."
+        },
+        {
+            "name": "testOutputFolder",
+            "type": "string",
+            "label": "Test Output Folder",
+            "groupName": "basicConfiguration",
+            "defaultValue": "$(System.DefaultWorkingDirectory)",
+            "helpMarkDown": "Folder to write the test result files. Defaults to $(System.DefaultWorkingDirectory).",
+            "required": false
+        },
+        {
+            "name": "baseUrl",
+            "type": "string",
+            "label": "Base URL",
+            "groupName": "basicConfiguration",
+            "defaultValue": "",
+            "helpMarkDown": "Base URL used to concat on the beginning of the urls, if the urls inside the 'Urls File' or filled in the 'Urls' input were without an address started with 'http' or 'https'",
+            "required": false
         },     
         {
             "name": "tags",
             "type": "string",
             "label": "Tags",
             "defaultValue": "",
+            "groupName": "basicConfiguration",
             "helpMarkDown": "Tags used to filter the tasks, separated by comma.",
             "required": false
         },
@@ -52,6 +85,7 @@
             "type": "string",
             "label": "URL to Login",
             "defaultValue": "",
+            "groupName": "loginConfiguration",
             "helpMarkDown": "URL used to provide user and pass before running the validation, leave in blank if no login is required",
             "required": false
         },
@@ -60,6 +94,7 @@
             "type": "string",
             "label": "UserName Control xPath",
             "defaultValue": "",
+            "groupName": "loginConfiguration",
             "helpMarkDown": "xPath of the Control used to type the username",
             "required": false
         },
@@ -68,6 +103,7 @@
             "type": "string",
             "label": "Password Control xPath",
             "defaultValue": "",
+            "groupName": "loginConfiguration",
             "helpMarkDown": "xPath of the Control used to type password",
             "required": false
         },
@@ -76,6 +112,7 @@
             "type": "string",
             "label": "User Name",
             "defaultValue": "",
+            "groupName": "loginConfiguration",
             "helpMarkDown": "Value of the User Name typed in the login page of the app",
             "required": false
         },
@@ -84,6 +121,7 @@
             "type": "string",
             "label": "Password",
             "defaultValue": "",
+            "groupName": "loginConfiguration",
             "helpMarkDown": "Value of the Password typed in the login page of the app",
             "required": false
         },
@@ -92,6 +130,7 @@
             "type": "string",
             "label": "Login Button x Path",
             "defaultValue": "",
+            "groupName": "loginConfiguration",
             "helpMarkDown": "xPath used to locate the button used to click and perform the login",
             "required": false
         },
@@ -100,25 +139,10 @@
             "type": "string",
             "label": "Title to wait",
             "defaultValue": "",
+            "groupName": "loginConfiguration",
             "helpMarkDown": "Title of the landing page after login",
             "required": false
-        },
-        {
-            "name": "testOutputFolder",
-            "type": "string",
-            "label": "Test Output Folder",
-            "defaultValue": "$(System.DefaultWorkingDirectory)",
-            "helpMarkDown": "Folder to write the test result files. Defaults to $(System.DefaultWorkingDirectory).",
-            "required": false
-        },
-        {
-            "name": "continueOnViolations",
-            "type": "boolean",
-            "label": "Continue even if it find violations",
-            "defaultValue": "",
-            "helpMarkDown": "Set result failed if it find accessibility violations",
-            "required": false
-        }
+        }        
     ],
     "execution": {
         "Node": {

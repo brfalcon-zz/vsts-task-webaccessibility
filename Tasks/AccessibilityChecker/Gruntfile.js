@@ -14,6 +14,7 @@ module.exports = function (grunt) {
         dest: "TEST-accessibility-output.json",
         junitDest: config.testResultPath ? config.testResultPath + "/TEST-accessibility-output.xml" : "TEST-accessibility-output.xml",
         loginurl: config.loginurl,
+        baseUrl: config.baseUrl,
         userControlName: config.userControlName,
         passControlName: config.passControlName,
         user: config.user,
