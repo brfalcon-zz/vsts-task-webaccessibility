@@ -35,8 +35,9 @@ AxeTaskRunner.prototype.getGruntInstance = function () {
         }
     }
 
-    gruntInstance.arg("--gruntfile");
-    gruntInstance.line(path.join(__dirname, gruntFile));
+    var fullGruntFile = path.join(__dirname, gruntFile);
+    
+    gruntInstance.arg(`--gruntfile=${fullGruntFile}`);
 
     return gruntInstance;
 }
